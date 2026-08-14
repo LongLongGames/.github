@@ -75,13 +75,13 @@
 
 ### 关键边界（必须遵守）
 
-| 层级 | 做什么 | 不做什么 |
+| 层级 | 做什么 | 仓库 |
 | ---- | ---- | ---- |
-| **MP** | 登录、JWT、游戏注册表 | 不存游戏业务数据、不发版本、不管资源 |
-| **GameTemplate** | 提供可复制的后端骨架 | 不作为长期运行的共享服务 |
-| **game-xxx** | 玩法、存档、排行榜、版本、资源 | 不回调 MP 做业务，只本地验 JWT |
-| **BugReport / Mail** | 提供标准化镜像 | 不共享数据库，数据落在各游戏自己的库 |
-| **Dashboard** | 聚合管理、权限控制 | 不成为业务主数据的 Source of Truth |
+| **中台** | 登录、JWT、游戏注册表 | https://github.com/LongLongGames/MP |
+| **模板** | 提供可复制的后端骨架 | https://github.com/LongLongGames/GameTemplate |
+| **游戏** | 玩法、存档、排行榜、版本、资源 | https://github.com/LongLongGames/game-match3-server<br>https://github.com/LongLongGames/game-match3-client |
+| **组件** | 提供标准化镜像 | https://github.com/LongLongGames/BugReport<br>https://github.com/LongLongGames/Mail |
+| **后台** | 聚合管理、权限控制 | https://github.com/LongLongGames/GameDashboard |
 
 ---
 
