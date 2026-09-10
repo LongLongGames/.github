@@ -33,6 +33,8 @@
 
 | 仓库 | 职责 | 状态 |
 |------|------|------|
+| [AssetBundleFramework](https://github.com/setsuodu/AssetBundleFramework) | AssetBundle 框架 OpenUPM | 🚧 已有仓库 |
+| [ExcelConfigCompiler](https://github.com/setsuodu/ExcelConfigCompiler) | Excel 导表工具 OpenUPM | 🚧 已有仓库 |
 | [BugReport](https://github.com/setsuodu/BugReport) | 异常/反馈收集服务 + 后续客户端 SDK | 🚧 已有仓库 |
 | Mail（待建） | 游戏内邮件 / 补偿 | 📋 规划中 |
 
