@@ -94,7 +94,7 @@
 - 缓存：Redis 7
 - 网关：Nginx
 - 鉴权：统一 JWT（HS256，MP 与游戏共用 Secret）
-- 迁移：DbUp（嵌入式 SQL）
+- 迁移：DbUp（嵌入式 SQL）——**必须通过 `--migrate` 专用入口执行**，禁止在多副本 API 启动路径中直接跑迁移。标准做法见 [GameTemplate](https://github.com/LongLongGames/GameTemplate)（单镜像 + Compose 一次性 Job + `service_completed_successfully`）
 - 交付：Docker + GitHub Actions + GHCR
 - 客户端：Unity（首个已验证）
 
