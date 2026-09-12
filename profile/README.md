@@ -173,9 +173,9 @@
 
 ## 9. 工程规范（ADR）
 
-影响全组织服务的架构决策（正文在 [GameTemplate/docs/adr](https://github.com/LongLongGames/GameTemplate/tree/main/docs/adr)）：
+影响全组织服务的架构决策（正文在 [.github/docs/adr](https://github.com/LongLongGames/.github/tree/main/docs/adr)）：
 
 | ADR | 说明 |
 |-----|------|
-| [ADR-0001](https://github.com/LongLongGames/GameTemplate/blob/main/docs/adr/0001-dbup-migrate-job.md) | DbUp：迁移与 API 进程分离 |
-| [ADR-0002](https://github.com/LongLongGames/GameTemplate/blob/main/docs/adr/0002-aot-json-and-jwt.md) | AOT：禁止匿名错误 JSON；JWT 对齐 MP SimpleJwt；API smoke 含 bad path |
+| [ADR-0001](https://github.com/LongLongGames/.github/blob/main/docs/adr/0001-dbup-migrate-job.md) | DbUp：迁移与 API 进程分离 |
+| [ADR-0002](https://github.com/LongLongGames/.github/blob/main/docs/adr/0002-aot-json-and-jwt.md) | AOT：禁止匿名错误 JSON；JWT 对齐 MP SimpleJwt；API smoke 含 bad path |
