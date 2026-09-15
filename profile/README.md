@@ -28,6 +28,8 @@
 | [GameTemplate](https://github.com/setsuodu/GameTemplate) | 游戏后端标准模板（建议设为 Public Template） | ✅ 已可用 |
 | [game-match3-server](https://github.com/setsuodu/game-match3-server) | 三消游戏后端（首个落地实例） | ✅ 已跑通 |
 | [game-match3-client](https://github.com/setsuodu/game-match3-client) | 三消 Unity 客户端 | 🚧 联调已通，客户端完善中 |
+| [game-arpg-server] | 即时战斗 服务器端 | 🚧 待建设 |
+| [game-arpg-client] | 即时战斗 Unity 客户端 | 🚧 待建设 |
 
 ### 可复用组件（像 nginx 一样提供镜像）
 
@@ -179,3 +181,5 @@
 |-----|------|
 | [ADR-0001](https://github.com/LongLongGames/.github/blob/main/docs/adr/0001-dbup-migrate-job.md) | DbUp：迁移与 API 进程分离 |
 | [ADR-0002](https://github.com/LongLongGames/.github/blob/main/docs/adr/0002-aot-json-and-jwt.md) | AOT：禁止匿名错误 JSON；JWT 对齐 MP SimpleJwt；API smoke 含 bad path |
+| [ADR-0003](./0003-openupm-gittagprefix) | Monorepo 中 OpenUPM 包与 GHCR/Server 发布的 Git Tag 隔离 | Accepted |
+| [ADR-0004](./0004-client-access-token-lifecycle.md) | 客户端 Access Token 生命周期与鉴权失败处理 | Proposed |
