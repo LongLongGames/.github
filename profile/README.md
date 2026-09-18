@@ -19,7 +19,7 @@
 | 仓库 | 职责 | 状态 |
 |------|------|------|
 | [MP](https://github.com/setsuodu/MP) | 统一账号、JWT、渠道登录、游戏 Catalog | ✅ 已跑通 |
-| [GameDashboard](https://github.com/setsuodu/GameDashboard) | 公司级管理后台（GM / 运营 / 程序） | 🚧 已有仓库，待完善 |
+| [GameDashboard](https://github.com/setsuodu/GameDashboard) | 公司级管理后台（GM / 运营 / 程序） | 🚧 MVP，待完善 |
 
 ### 游戏生产流水线
 
@@ -28,8 +28,8 @@
 | [GameTemplate](https://github.com/setsuodu/GameTemplate) | 游戏后端标准模板（建议设为 Public Template） | ✅ 已可用 |
 | [game-match3-server](https://github.com/setsuodu/game-match3-server) | 三消游戏后端（首个落地实例） | ✅ 已跑通 |
 | [game-match3-client](https://github.com/setsuodu/game-match3-client) | 三消 Unity 客户端 | 🚧 联调已通，客户端完善中 |
-| [game-arpg-server] | 即时战斗 服务器端 | 🚧 待建设 |
-| [game-arpg-client] | 即时战斗 Unity 客户端 | 🚧 待建设 |
+| [game-act-server](https://github.com/setsuodu/game-act-server) | 即时战斗 服务器端 | 🚧 待建设 |
+| [game-act-client](https://github.com/setsuodu/game-act-client) | 即时战斗 Unity 客户端 | 🚧 待建设 |
 
 ### 可复用组件（像 nginx 一样提供镜像）
 
@@ -39,7 +39,8 @@
 | [ExcelConfigCompiler](https://github.com/setsuodu/ExcelConfigCompiler) | Excel 导表工具 OpenUPM | ✅ 已可用 |
 | [BugReport](https://github.com/setsuodu/BugReport) | 异常/反馈收集服务 + 客户端 OpenUPM | ✅ 已可用 |
 | [Mail](https://github.com/setsuodu/Mail) | 游戏内邮件 / 补偿 | ✅ 已可用 |
-| [Localization](https://github.com/setsuodu/Localization) | 多语言 | 🚧 已有仓库 |
+| [Localization](https://github.com/setsuodu/Localization) | 多语言 | ✅ 已可用 |
+| [Input](https://github.com/setsuodu/Input) | PC/主机输入控制 | 🚧 待建设 |
 
 ---
 
