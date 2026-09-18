@@ -150,23 +150,13 @@
 
 ---
 
-## 6. 当前已验证能力（2026-08）
-
-- MP 登录（official / guest）并签发 JWT
-- Match3 后端独立部署（User / Leaderboard / Core / Gateway）
-- Unity 客户端完成：登录 → 拉资料 → 提交分数 → 查排行榜 → 查自己排名
-- 多服务 Docker Compose 编排稳定运行
-- 游戏与平台 JWT 联调通过
-
----
-
-## 7. Roadmap（公司级）
+## 6. Roadmap（公司级）
 
 [Projects V2](https://github.com/orgs/LongLongGames/projects/1)
 
 ---
 
-## 8. 新游戏接入 SOP（最短路径）
+## 7. 新游戏接入 SOP（最短路径）
 
 1. 在 **MP Catalog** 注册 game_id
 2. 从 **GameTemplate** 使用 “Use this template” 创建新仓库
@@ -178,7 +168,7 @@
 
 详细步骤见各仓库 README。
 
-## 9. 工程规范（ADR）
+## 8. 工程规范（ADR）
 
 影响全组织服务的架构决策（正文在 [.github/docs/adr](https://github.com/LongLongGames/.github/tree/main/docs/adr)）：
 
