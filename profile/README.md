@@ -18,18 +18,18 @@
 
 | 仓库 | 职责 | 状态 |
 |------|------|------|
-| [MP](https://github.com/setsuodu/MP) | 统一账号、JWT、渠道登录、游戏 Catalog | ✅ 已跑通 |
-| [GameDashboard](https://github.com/setsuodu/GameDashboard) | 公司级管理后台（GM / 运营 / 程序） | 🚧 MVP，待完善 |
+| [MP](https://github.com/LongLongGames/MP) | 统一账号、JWT、渠道登录、游戏 Catalog | ✅ 已跑通 |
+| [GameDashboard](https://github.com/LongLongGames/GameDashboard) | 公司级管理后台（GM / 运营 / 程序） | 🚧 MVP，待完善 |
 
 ### 游戏生产流水线
 
 | 仓库 | 职责 | 状态 |
 |------|------|------|
-| [GameTemplate](https://github.com/setsuodu/GameTemplate) | 游戏后端标准模板（建议设为 Public Template） | ✅ 已可用 |
-| [game-match3-server](https://github.com/setsuodu/game-match3-server) | 三消游戏后端（首个落地实例） | ✅ 已跑通 |
-| [game-match3-client](https://github.com/setsuodu/game-match3-client) | 三消 Unity 客户端 | 🚧 联调已通，客户端完善中 |
-| [game-act-server](https://github.com/setsuodu/game-act-server) | 即时战斗 服务器端 | 🚧 待建设 |
-| [game-act-client](https://github.com/setsuodu/game-act-client) | 即时战斗 Unity 客户端 | 🚧 待建设 |
+| [GameTemplate](https://github.com/LongLongGames/GameTemplate) | 游戏后端标准模板（建议设为 Public Template） | ✅ 已可用 |
+| [game-match3-server](https://github.com/LongLongGames/game-match3-server) | 三消游戏后端（首个落地实例） | ✅ 已跑通 |
+| [game-match3-client](https://github.com/LongLongGames/game-match3-client) | 三消 Unity 客户端 | 🚧 联调已通，客户端完善中 |
+| [game-act-server](https://github.com/LongLongGames/game-act-server) | 即时战斗 服务器端 | 🚧 待建设 |
+| [game-act-client](https://github.com/LongLongGames/game-act-client) | 即时战斗 Unity 客户端 | 🚧 待建设 |
 
 ### 可复用组件（像 nginx 一样提供镜像）
 
