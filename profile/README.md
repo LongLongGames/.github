@@ -176,5 +176,5 @@
 |-----|------|
 | [ADR-0001](https://github.com/LongLongGames/.github/blob/main/docs/adr/0001-dbup-migrate-job.md) | DbUp：迁移与 API 进程分离 |
 | [ADR-0002](https://github.com/LongLongGames/.github/blob/main/docs/adr/0002-aot-json-and-jwt.md) | AOT：禁止匿名错误 JSON；JWT 对齐 MP SimpleJwt；API smoke 含 bad path |
-| [ADR-0003](./0003-openupm-gittagprefix) | Monorepo 中 OpenUPM 包与 GHCR/Server 发布的 Git Tag 隔离 | Accepted |
-| [ADR-0004](./0004-client-access-token-lifecycle.md) | 客户端 Access Token 生命周期与鉴权失败处理 | Proposed |
+| [ADR-0003](https://github.com/LongLongGames/.github/blob/main/docs/adr/0003-openupm-gittagprefix.md) | Monorepo 中 OpenUPM 包与 GHCR/Server 发布的 Git Tag 隔离 | Accepted |
+| [ADR-0004](../docs/adr/0004-client-access-token-lifecycle.md) | 客户端 Access Token 生命周期与鉴权失败处理 | Proposed |
