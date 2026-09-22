@@ -21,8 +21,8 @@
 | [MP](https://github.com/LongLongGames/MP) | 统一账号、JWT、渠道登录、游戏 Catalog | ✅ 已跑通 |
 | [GameDashboard](https://github.com/LongLongGames/GameDashboard) | 公司级管理后台（GM / 运营 / 程序） | 🚧 MVP，待完善 |
 | [Website](https://github.com/LongLongGames/Website) | 官网 | 🚧 待建设 |
-| [GameHub_PC](https://github.com/LongLongGames/GameHub_PC) | PC官方平台 | 🚧 待建设 |
-| [GameHub_Android](https://github.com/LongLongGames/GameHub_Android) | 安卓数据聚合、登录令牌 | 🚧 待建设 |
+| [GameLauncher](https://github.com/LongLongGames/GameLauncher) | PC官方平台 | 🚧 待建设 |
+| [GameHub](https://github.com/LongLongGames/GameHub) | 安卓数据聚合、登录令牌 | 🚧 待建设 |
 
 ### 游戏生产流水线
 
