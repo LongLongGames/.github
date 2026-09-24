@@ -43,6 +43,7 @@
 | [BugReport](https://github.com/setsuodu/BugReport) | 异常/反馈收集服务 + 客户端 OpenUPM | ✅ 已可用 |
 | [Mail](https://github.com/setsuodu/Mail) | 游戏内邮件 / 补偿 | ✅ 已可用 |
 | [Localization](https://github.com/setsuodu/Localization) | 多语言 | ✅ 已可用 |
+| [SimdJSON](https://github.com/setsuodu/simdjson) | 高速JSON解析 | ✅ 已可用 |
 | [Input](https://github.com/setsuodu/Input) | PC/主机输入控制 | 🚧 待建设 |
 
 ---
