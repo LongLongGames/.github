@@ -7,7 +7,8 @@
 | [ADR-0001](./0001-dbup-migrate-job.md) | 数据库迁移与 API 进程分离（DbUp） | Accepted |
 | [ADR-0002](./0002-aot-json-and-jwt.md) | Native AOT 下的 JSON 错误体与 JWT 验签 | Accepted |
 | [ADR-0003](./0003-openupm-gittagprefix) | Monorepo 中 OpenUPM 包与 GHCR/Server 发布的 Git Tag 隔离 | Accepted |
-| [ADR-0004](./0004-client-access-token-lifecycle.md) | 客户端 Access Token 生命周期与鉴权失败处理 | Proposed |
+| [ADR-0004](./0004-client-access-token-lifecycle.md) | 客户端 Access Token 生命周期与鉴权失败处理 | Accepted |
+| [ADR-0005](./0005-steam-native-crash-on-editor-stop.md) | Steam 非正常断网后 Editor Stop 引发 Native 硬崩溃 | Proposed |
 
 ## 如何新增 ADR
 
