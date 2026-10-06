@@ -191,3 +191,4 @@
 | [ADR-0003](https://github.com/LongLongGames/.github/blob/main/docs/adr/0003-openupm-gittagprefix.md) | Monorepo 中 OpenUPM 包与 GHCR/Server 发布的 Git Tag 隔离 |
 | [ADR-0004](/LongLongGames/.github/blob/main/docs/adr/0004-client-access-token-lifecycle.md) | 客户端 Access Token 生命周期与鉴权失败处理 |
 | [ADR-0005](/LongLongGames/.github/blob/main/docs/adr/0005-steam-native-crash-on-editor-stop.md) | Steam网络同步，Editor调试强退闪退 |
+| [ADR-0006](/LongLongGames/.github/blob/main/docs/adr/0006-unity-free-license-ci-ban.md) | 不在 CI 中使用 GameCI / 云端 Unity 构建 |
