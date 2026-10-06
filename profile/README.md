@@ -2,13 +2,13 @@
 
 ## 1. Overview
 
-**统一身份平台（MP） + 可复制的游戏后端模板（GameTemplate） + 每个游戏独立部署，配套可复用组件（Mail / BugReport）与公司级管理后台（Dashboard）。**
+**统一身份平台（MP） + 可复制的游戏后端模板（GameTemplate） + 每个游戏独立部署，配套可复用组件（Mail / BugReport / LocalCDN）与公司级管理后台（Dashboard）。**
 
 核心原则：
 
-- **代码 / 镜像可复用**
-- **运行时与数据完全独立**
-- **平台只做身份与治理，不做游戏业务**
+* **代码 / 镜像可复用**
+* **运行时与数据完全独立**
+* **平台只做身份与治理，不做游戏业务**
 
 ---
 
@@ -17,7 +17,7 @@
 ### 平台核心（只部署一份）
 
 | 仓库 | 职责 | 状态 |
-|------|------|------|
+| --- | --- | --- |
 | [MP](https://github.com/LongLongGames/MP) | 统一账号、JWT、渠道登录、游戏 Catalog | ✅ 已跑通 |
 | [GameDashboard](https://github.com/LongLongGames/GameDashboard) | 公司级管理后台（GM / 运营 / 程序） | 🚧 MVP，待完善 |
 | [Website](https://github.com/LongLongGames/Website) | 官网 | 🚧 待建设 |
@@ -27,7 +27,7 @@
 ### 游戏生产流水线
 
 | 仓库 | 职责 | 状态 |
-|------|------|------|
+| --- | --- | --- |
 | [GameTemplate](https://github.com/LongLongGames/GameTemplate) | 游戏后端标准模板（建议设为 Public Template） | ✅ 已可用 |
 | [game-match3-server](https://github.com/LongLongGames/game-match3-server) | 三消游戏后端（首个落地实例） | ✅ 已跑通 |
 | [game-match3-client](https://github.com/LongLongGames/game-match3-client) | 三消 Unity 客户端 | 🚧 联调已通，客户端完善中 |
@@ -37,20 +37,21 @@
 ### 可复用组件（像 nginx 一样提供镜像）
 
 | 仓库 | 职责 | 状态 |
-|------|------|------|
+| --- | --- | --- |
 | [AssetBundleFramework](https://github.com/setsuodu/AssetBundleFramework) | AssetBundle 框架 OpenUPM | ✅ 已可用 |
 | [ExcelConfigCompiler](https://github.com/setsuodu/ExcelConfigCompiler) | Excel 导表工具 OpenUPM | ✅ 已可用 |
 | [BugReport](https://github.com/setsuodu/BugReport) | 异常/反馈收集服务 + 客户端 OpenUPM | ✅ 已可用 |
 | [Mail](https://github.com/setsuodu/Mail) | 游戏内邮件 / 补偿 | ✅ 已可用 |
 | [Localization](https://github.com/setsuodu/Localization) | 多语言 | ✅ 已可用 |
 | [SimdJSON](https://github.com/setsuodu/simdjson) | 高速JSON解析 | ✅ 已可用 |
+| [LocalCDN](https://github.com/LongLongGames/LocalCDN) | 本地假 OSS / CDN（Nginx），生产只换 URL | ✅ 已可用 |
 | [Input](https://github.com/setsuodu/Input) | PC/主机输入控制 | 🚧 待建设 |
 
 ---
 
 ## 3. 架构全景
 
-```text
+```
                         ┌─────────────────────────────────┐
                         │              MP                 │
                         │  统一身份 / JWT / Catalog       │
@@ -71,8 +72,8 @@
            │  按需引用组件镜像             │                             │
            ▼                             ▼                             ▼
    ┌───────────────┐             ┌───────────────┐             ┌───────────────┐
-   │ BugReport     │             │ Mail          │             │ ...           │
-   │ (独立镜像)     │             │ (独立镜像)     │             │               │
+   │ BugReport     │             │ Mail          │             │ LocalCDN      │
+   │ (独立镜像)     │             │ (独立镜像)     │             │ (Nginx 假OSS) │
    └───────────────┘             └───────────────┘             └───────────────┘
 
                         ┌─────────────────────────────────┐
@@ -83,47 +84,48 @@
                         └─────────────────────────────────┘
 ```
 
-### 关键边界（必须遵守）
+### 责任边界（必须遵守）
 
 | 层级 | 做什么 | 仓库 |
-| ---- | ---- | ---- |
-| **中台** | 登录、JWT、游戏注册表 | https://github.com/LongLongGames/MP |
-| **模板** | 提供可复制的后端骨架 | https://github.com/LongLongGames/GameTemplate |
-| **游戏** | 玩法、存档、排行榜、版本、资源 | https://github.com/LongLongGames/game-match3-server<br>https://github.com/LongLongGames/game-match3-client |
-| **组件** | 提供标准化镜像 | https://github.com/LongLongGames/BugReport<br>https://github.com/LongLongGames/Mail |
-| **后台** | 聚合管理、权限控制 | https://github.com/LongLongGames/GameDashboard |
+| --- | --- | --- |
+| **中台** | 登录、JWT、游戏注册表 | [https://github.com/LongLongGames/MP](https://github.com/LongLongGames/MP) |
+| **模板** | 提供可复制的后端骨架 | [https://github.com/LongLongGames/GameTemplate](https://github.com/LongLongGames/GameTemplate) |
+| **游戏** | 玩法、存档、排行榜、版本、资源 | [https://github.com/LongLongGames/game-match3-server](https://github.com/LongLongGames/game-match3-server) [https://github.com/LongLongGames/game-match3-client](https://github.com/LongLongGames/game-match3-client) |
+| **组件** | 提供标准化镜像 | [BugReport](https://github.com/LongLongGames/BugReport) [Mail](https://github.com/LongLongGames/Mail) [LocalCDN](https://github.com/LongLongGames/LocalCDN) |
+| **后台** | 聚合管理、权限控制 | [https://github.com/LongLongGames/GameDashboard](https://github.com/LongLongGames/GameDashboard) |
 
 ---
 
 ## 4. 技术统一约定
 
-- 语言 / 运行时：**.NET 10 + Native AOT**
-- 数据库：PostgreSQL 16（每游戏独立实例或独立库）
-- 缓存：Redis 7
-- 网关：Nginx
-- 鉴权：统一 JWT（HS256，MP 与游戏共用 Secret）
-- 迁移：DbUp（嵌入式 SQL）——**必须通过 `--migrate` 专用入口执行**，禁止在多副本 API 启动路径中直接跑迁移。标准做法见 [GameTemplate](https://github.com/LongLongGames/GameTemplate)（单镜像 + Compose 一次性 Job + `service_completed_successfully`）
-- 交付：Docker + GitHub Actions + GHCR
-- 客户端：Unity（首个已验证）
+* 语言 / 运行时： **.NET 10 + Native AOT**
+* 数据库：PostgreSQL 16（每游戏独立实例或独立库）
+* 缓存：Redis 7
+* 网关：Nginx
+* 鉴权：统一 JWT（HS256，MP 与游戏共用 Secret）
+* 资源分发：生产 CDN / OSS；本地用 LocalCDN（Nginx 假 OSS，端口 12280），客户端只换 BaseURL
+* 迁移：DbUp（嵌入式 SQL）—— **必须通过 --migrate 专用入口执行** ，禁止在多副本 API 启动路径中直接跑迁移。标准做法见 [GameTemplate](https://github.com/LongLongGames/GameTemplate) （单镜像 + Compose 一次性 Job + service_completed_successfully ）
+* 交付：Docker + GitHub Actions + GHCR
+* 客户端：Unity（首个已验证）
 
 ---
 
 ## 5. 宿主机端口规划
 
-容器内仍使用标准端口；**仅宿主机映射**按本表执行，避免与经典服务及兄弟业务冲突。
+容器内仍使用标准端口； **仅宿主机映射** 按本表执行，避免与经典服务及兄弟业务冲突。
 
 ### 分段
 
 | 分区 | 段 | 说明 |
-|------|-----|------|
+| --- | --- | --- |
 | 平台 MP / Dashboard | 11000–11999 | 全公司一份 |
-| 可复用组件 | 12000–12999 | BugReport / Mail / … |
+| 可复用组件 | 12000–12999 | BugReport / Mail / LocalCDN / … |
 | 游戏实例 | 13000+ | 每游戏一块 100 端口 |
 
 ### 平台
 
 | 服务 | Host | Container |
-|------|------|-----------|
+| --- | --- | --- |
 | mp-gateway | 11080 | 80 |
 | mp-postgres | 11032 | 5432 |
 | GameDashboard | 11090 | 80 |
@@ -131,23 +133,31 @@
 ### 组件
 
 | 服务 | Host | Container |
-|------|------|-----------|
+| --- | --- | --- |
 | bugreport-server | 12080 | 8080 |
 | bugreport-postgres | 12032 | 5432 |
 | bugreport-minio S3 | 12090 | 9000 |
 | bugreport-minio Console | 12091 | 9001 |
 | mail-server | 12180 | 8080 |
 | mail-postgres | 12132 | 5432 |
+| **local-cdn (FakeOSS)** | **12280** | **80** |
+
+> LocalCDN 说明：  
+> 本地开发把 AssetBundle / 热更包放到 `data/`，Nginx 提供静态文件 + CORS + 缓存头。  
+> 客户端本地配置 `ResourceBaseUrl = "http://localhost:12280/"`，生产直接换成真实 CDN/OSS 域名，零代码改动。  
+> 全公司共用一个实例即可，不占用游戏端口段。
 
 ### 游戏（G = 1,2,3…）
 
 | 角色 | 公式 | match3 (G=1) |
-|------|------|----------------|
+| --- | --- | --- |
 | Gateway | 13000 + G×100 + 80 | 13180 |
 | Postgres | 13000 + G×100 + 32 | 13132 |
 | Redis | 13000 + G×100 + 79 | 13179 |
 
-> 内部 user / core / leaderboard 服务**不映射**宿主机端口，只通过本游戏 Gateway 访问。
+> 内部 user / core / leaderboard 服务  
+> 不映射  
+> 宿主机端口，只通过本游戏 Gateway 访问。
 
 ---
 
@@ -165,18 +175,19 @@
 4. 配置与 MP 相同的 JWT_SECRET
 5. docker compose up 验证
 6. 按需在 compose 中引用 bugreport / mail 镜像
-7. 客户端先调 MP 拿 Token，再调本游戏 Gateway
+7. 资源走 LocalCDN（本地）或真实 CDN（生产），客户端只换 BaseURL
+8. 客户端先调 MP 拿 Token，再调本游戏 Gateway
 
 详细步骤见各仓库 README。
 
 ## 8. 工程规范（ADR）
 
-影响全组织服务的架构决策（正文在 [.github/docs/adr](https://github.com/LongLongGames/.github/tree/main/docs/adr)）：
+影响全组织服务的架构决策（正文在 [.github/docs/adr](https://github.com/LongLongGames/.github/tree/main/docs/adr) ）：
 
 | ADR | 说明 |
-|-----|------|
+| --- | --- |
 | [ADR-0001](https://github.com/LongLongGames/.github/blob/main/docs/adr/0001-dbup-migrate-job.md) | DbUp：迁移与 API 进程分离 |
 | [ADR-0002](https://github.com/LongLongGames/.github/blob/main/docs/adr/0002-aot-json-and-jwt.md) | AOT：禁止匿名错误 JSON；JWT 对齐 MP SimpleJwt；API smoke 含 bad path |
 | [ADR-0003](https://github.com/LongLongGames/.github/blob/main/docs/adr/0003-openupm-gittagprefix.md) | Monorepo 中 OpenUPM 包与 GHCR/Server 发布的 Git Tag 隔离 |
-| [ADR-0004](../docs/adr/0004-client-access-token-lifecycle.md) | 客户端 Access Token 生命周期与鉴权失败处理 |
-| [ADR-0005](../docs/adr/0005-steam-native-crash-on-editor-stop.md) | Steam网络同步，Editor调试强退闪退 |
+| [ADR-0004](/LongLongGames/.github/blob/main/docs/adr/0004-client-access-token-lifecycle.md) | 客户端 Access Token 生命周期与鉴权失败处理 |
+| [ADR-0005](/LongLongGames/.github/blob/main/docs/adr/0005-steam-native-crash-on-editor-stop.md) | Steam网络同步，Editor调试强退闪退 |
